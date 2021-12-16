@@ -1,0 +1,107 @@
+#include <iostream>
+using namespace std;
+
+//declare class BaseballBox
+class BaseballBox
+{
+
+  public:
+  
+  //default constructor
+  BaseballBox()
+    {
+        // declare a named constant max_card_default assign default value to data member
+        const int max_card_default=7;
+        maximum_card = max_card_default;
+        current_card= 0;
+    }
+    
+  // Second constructor with parameter max_card_count
+  BaseballBox(int max_card_count)
+    {
+         current_card = 0;
+         maximum_card= max_card_count;
+    }
+    
+  // method to add card in box
+    void add_a_card(int value)
+    {
+        current_card = current_card + value;
+     // use loop to return the box to zero and add the cards
+        while (current_card > maximum_card )
+        {current_card = current_card - maximum_card;}
+    
+    }
+    
+  // method to get current card count
+    int get_current_card_count()
+    {
+        return current_card;
+    }
+  //method to reset the box means set current card = 0
+    void empty_box()
+    {
+        current_card = 0;
+    }
+    
+    private: // declare data members in private of class
+    int maximum_card;
+    int current_card;
+
+};
+
+
+int main () {
+
+    // object box1 with default constructor
+     BaseballBox box1;
+     
+    // output default constructor box 1
+     box1.add_a_card(1);
+     box1.add_a_card(1);
+     box1.add_a_card(1);
+     box1.add_a_card(1);
+     box1.add_a_card(1);
+     box1.add_a_card(1);
+     cout<< "the box1 contain " << box1.get_current_card_count() << endl;
+      
+    // output default constructor box 1
+     box1.add_a_card(1);
+     cout<< "the box1 contain " << box1.get_current_card_count() << endl;
+     
+    // output default constructor box 1
+     box1.add_a_card(1);
+     cout<< "the box1 contain " << box1.get_current_card_count() << endl;
+ 
+    // Output box1 with empty_box method
+     box1.empty_box();
+     cout<< "the box1 contain " << box1.get_current_card_count() << endl;
+    
+    // object box2 with second constructor - parameter
+    BaseballBox box2(6);
+    
+    // output second constructor box 2
+     box2.add_a_card(1);
+     box2.add_a_card(1);
+     box2.add_a_card(1);
+     box2.add_a_card(1);
+     box2.add_a_card(1);
+     box2.add_a_card(1);
+     cout<< "the box2 contain " << box2.get_current_card_count() << endl;
+   
+    // output second constructor box 2
+     box2.add_a_card(1);
+     cout<< "the box2 contain " << box2.get_current_card_count() << endl;
+
+    // output second constructor box 2
+     box2.add_a_card(1);
+     cout<< "the box2 contain " << box2.get_current_card_count() <<endl;
+      
+    // Output box2 with empty_box method
+     box2.empty_box();
+     cout<< "the box2 contain " << box2.get_current_card_count() << endl;
+    
+  return 0;
+  }
+
+
