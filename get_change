@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+
+{
+   double amount_due;
+   double amount_received;
+   double change;
+
+   cout << "How much customer owe?" << endl;
+   cin >> amount_due;
+   cout << "How much customer pay?" << endl;
+   cin >> amount_received;
+   change = amount_received - amount_due;
+   cout << "Your change is " << change << endl;
+   
+    int dollar = 100;
+    // 1 dollar = 100 cents.
+    // to avoid magic number.
+    
+    int pennies = change * dollar + 0.5;
+    // convert from double to int
+
+    int no_dollars = pennies / dollar;
+    // find how many dollar bills need.
+   
+    int cents = pennies % dollar;
+    // find the remainder of pennies
+    
+    int quarter = 25;
+    int no_quarter;
+    no_quarter = cents/quarter;
+    // find how many coin of quarter need
+    
+    int cents_after_quarter = cents % quarter;
+
+  
+    int dime = 10;
+    int no_dime;
+    no_dime = cents_after_quarter/dime;
+    // find how many coin of dime need
+
+    int cents_after_dime = cents_after_quarter % dime;
+
+    int nickel = 5;
+    int no_nickel;
+    no_nickel = cents_after_dime/nickel;
+    // find how many coin of the nickel need
+
+    int no_pennies_remainder = cents_after_dime % nickel;
+    // find how many coin of penny need
+    
+    
+    cout << no_dollars << " dollar " << endl;
+    cout << no_quarter << " quarters "<< endl;
+    cout << no_dime << " dimes "<< endl;
+    cout << no_nickel << " nickels "<<endl;
+    cout << no_pennies_remainder << " pennies " << endl;
+    
+    
+    return 0;
+}
