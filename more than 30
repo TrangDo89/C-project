@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+/**
+   Computes the sum of two numbers
+   @param number1 and number2
+   @return the sum
+*/
+
+bool biggerThan30(int number1, int number2)
+{
+    const int number = 30;
+    bool sum = false; // call bool function is false.
+    if ((number1 + number2)>number) // sum > 30, function return true
+    { sum = true;}
+    return sum;// return value
+}
+       int main()
+{
+     int number1, number2;
+    // call number1, number2 are numbers entered from user.
+    cout << "what is your first number?" << endl;
+    // ask user enter number 1
+    cin >> number1;
+    // input1 is stored here
+    
+    cout << "what is your second number?" << endl;
+    // ask user enter number 2
+    cin >> number2;
+    // input 2 is stored number 2
+    
+    if (biggerThan30(number1,number2)==0)
+        // call the function biggerThan30 with 2 parameter values from user.
+        // if function biggerThan30 = 0, the function will be FALSE
+        cout << "FALSE" << endl;
+    else
+        cout << "TRUE" << endl;
+        // if function biggerThan30 is not 0, the function will be TRUE
+           
+         
+          
+          return 0;
+
+       }
+
