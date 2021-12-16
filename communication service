@@ -1,0 +1,107 @@
+#include <iostream>
+using namespace std;
+
+// declare base class qMsg for communication service
+class qMsg
+{
+    
+    public:
+    
+    // declare variable float for length of message in minutes
+     float message_length_in_minute;
+    
+    // declare variable int for number of characters in the messages
+     int number_of_characters_in_message;
+    
+    // declare get method function for base class qMsg.
+    // this function will be used to calcuate message price in minute or in characters
+     void get_values();
+   
+    // declare set price method for populate the price
+     void set_price_message();
+    
+};
+
+// vMsg is derived from base class qMsg.
+class vMsg: public qMsg
+{
+    public:
+    
+    // default constructor of vMSg class with constant variable
+    vMsg(){
+        
+        // price of message 3 cents per minutes
+        const int price_minute_default = 3;
+        price_minute = price_minute_default;
+    }
+    
+     void get_values()
+        {
+              cout << "Please enter the length of message in minutes:  ";
+              cin >> message_length_in_minute;
+        }
+    
+    
+     void set_price()
+     {
+         cout << "The price of message in minutes:  " << message_length_in_minute * price_minute << endl<<endl;
+     }
+    
+    // declare variable of class in private
+   private:
+    int price_minute;
+    float message_length_in_minute;
+};
+
+
+//tMsg is derived from base class qMsg
+class tMsg : public qMsg//tMsg is derived from qMsg
+{
+   
+    public:
+        
+    // default constructor of tMsg class with constant variable
+        tMsg(){
+            
+            // price of message 2 cents per character
+            const int price_character_default = 2;
+            price_character = price_character_default;
+        }
+        
+         void get_values()
+           {
+             cout << "Please enter number of characters in the message:  ";
+             cin >> number_of_characters_in_message;
+           }
+    
+         void set_price()
+         {
+             cout << "The price of message in characters: " << number_of_characters_in_message * price_character<< endl;
+         }
+    
+    // declare variable of class in private
+    private:
+        int price_character;
+        int number_of_characters_in_message;
+    };
+    
+    
+
+int main()
+{
+    //object of derived class vMsg
+    vMsg object1;
+    
+   //object of derived class tMsg
+    tMsg object2;
+   
+   // call function of object1
+    object1.get_values();
+    object1.set_price();
+    
+   // call function of object2
+    object2.get_values();
+    object2.set_price();
+    return 0;
+}
+
