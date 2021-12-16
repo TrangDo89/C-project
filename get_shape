@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+
+{
+    // declaration variable with int for the rectangle's coordinates
+    int x1, y1, x2, y2;
+    
+    // introduction the program to user
+    cout << "this program to help you identify your rectangle is square, potrait or landscape with value you enter." << endl;
+    
+    // output the request to ask user enter input lower left corner values.
+    cout << "what is your first point on the lower left corner? Enter value of x, y continuosly, space between value x and value y " << endl;
+    
+    // call x1, y1 is the coordinate of lower left corner like (x1,y1)
+    cin >> x1 >> y1;
+    
+    // output the request to ask user enter upper right corner values.
+    cout <<"what is your second point on the upper right corner? Enter value of x, y continuosly, space between value x and value y." << endl;
+    
+    // call x2, y2 is the coordinate of the upper right corner
+    cin >> x2 >> y2;
+    
+    // x2 - x1 = width, y2 - y1 = height , width = length, so rectangle is square
+    if (x2 - x1 == y2 - y1)
+        {
+            cout << "square" << endl;
+        }
+    
+    // width < length, so rectangel is potrait
+    else if (x2 - x1 < y2 - y1)
+        {
+            cout << "potrait" << endl;
+        }
+    // width > length, so rectangle is landscape
+    else if (x2 - x1 > y2 - y1)
+        {
+            cout << "landscape" << endl;
+        }
+    
+     
+    
+      return 0;
+   }
+
